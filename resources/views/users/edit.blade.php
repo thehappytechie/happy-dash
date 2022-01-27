@@ -11,7 +11,7 @@
                 @method('PUT')
                 <div class="margin-y-md">
                     <div class="grid gap-lg margin-right-lg">
-                        <a href="{{ route('userDatatable') }}">Back to users</a>
+                        <a href="{{ route('userDatatable') }}">&larr; Back to users</a>
                         <div class="col-6@md">
                             <label class="form-label margin-bottom-xxs" for="name">Full name</label>
                             <input class="form-control width-100% @error('name') is-error @enderror" type="text"
