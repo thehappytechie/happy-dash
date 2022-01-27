@@ -1,0 +1,307 @@
+.alert {
+    background-color: hsla(
+        var(--color-primary-h),
+        var(--color-primary-s),
+        var(--color-primary-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+}
+
+.alert__icon {
+    color: var(--color-primary);
+}
+
+.alert__close-btn {
+    display: inline-block;
+    flex-shrink: 0;
+    transition: 0.2s;
+}
+.alert__close-btn .icon {
+    display: block;
+}
+.alert__close-btn:hover {
+    opacity: 0.7;
+}
+
+.alert--success {
+    background-color: hsla(
+        var(--color-success-h),
+        var(--color-success-s),
+        var(--color-success-l),
+        0.2
+    );
+}
+.alert--success .alert__icon {
+    color: var(--color-success);
+}
+
+.alert--error {
+    background-color: hsla(
+        var(--color-error-h),
+        var(--color-error-s),
+        var(--color-error-l),
+        0.2
+    );
+}
+.alert--error .alert__icon {
+    color: var(--color-error);
+}
+
+.alert--warning {
+    background-color: hsla(
+        var(--color-warning-h),
+        var(--color-warning-s),
+        var(--color-warning-l),
+        0.2
+    );
+}
+.alert--warning .alert__icon {
+    color: var(--color-warning);
+}
+
+.alert--is-visible {
+    position: static;
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+}
+
+.is-error {
+    border: 2px solid var(--color-accent-dark);
+}
+
+:root {
+    --tooltip-triangle-size: 12px;
+}
+
+.tooltip-trigger {
+    white-space: nowrap;
+    border-bottom: 1px dotted var(--color-contrast-high);
+    cursor: help;
+}
+
+.tooltip {
+    display: inline-block;
+    position: absolute;
+    z-index: var(--z-index-popover, 5);
+    padding: var(--space-xxs);
+    border-radius: var(--radius-sm);
+    max-width: 200px;
+    background-color: hsla(
+        var(--color-contrast-higher-h),
+        var(--color-contrast-higher-s),
+        var(--color-contrast-higher-l),
+        0.98
+    );
+    box-shadow: var(--shadow-md);
+    color: var(--color-bg);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+.tooltip a {
+    color: inherit;
+    text-decoration: underline;
+}
+@supports ((-webkit-clip-path: inset(50%)) or (clip-path: inset(50%))) {
+    .tooltip::before {
+        content: "";
+        position: absolute;
+        background-color: inherit;
+        border: inherit;
+        width: var(--tooltip-triangle-size);
+        height: var(--tooltip-triangle-size);
+        -webkit-clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 100%);
+    }
+}
+
+.tootip:not(.tooltip--sticky) {
+    pointer-events: none;
+}
+
+.tooltip--lg {
+    max-width: 350px;
+    padding: var(--space-xs);
+}
+
+.tooltip--top::before,
+.tooltip--bottom::before {
+    left: calc(50% - var(--tooltip-triangle-size) / 2);
+}
+
+.tooltip--top::before {
+    bottom: calc(var(--tooltip-triangle-size) * -0.5);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.tooltip--bottom::before {
+    top: calc(var(--tooltip-triangle-size) * -0.5);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.tooltip--left::before,
+.tooltip--right::before {
+    top: calc(50% - var(--tooltip-triangle-size) / 2);
+}
+
+.tooltip--left::before {
+    right: calc(var(--tooltip-triangle-size) * -0.5);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.tooltip--right::before {
+    left: calc(var(--tooltip-triangle-size) * -0.5);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tooltip--is-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.tabs__control {
+    text-decoration: none;
+    color: var(--color-contrast-medium);
+}
+
+.tabs__control:focus {
+    outline: 2px solid
+        hsla(
+            var(--color-primary-h),
+            var(--color-primary-s),
+            var(--color-primary-l),
+            0.2
+        );
+    outline-offset: 2px;
+}
+
+.tabs__control:hover {
+    color: var(--color-contrast-high);
+}
+
+.js .tabs__control[aria-selected="true"] {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+.sidenav__item a {
+    cursor: pointer;
+}
+
+.badge {
+    /* reset - in case the class is applied to a <button> */
+    border: 0;
+    color: inherit;
+    line-height: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radius-md);
+    background-color: var(--color-contrast-lower);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* 👇 you can ovveride this padding by using the padding utility classes */
+}
+
+.badge:not([class^="padding-"]):not([class*=" padding-"]) {
+    padding: var(--space-xxxs) var(--space-xxs);
+}
+
+.badge--outline {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--color-contrast-lower);
+}
+
+.badge--contrast-higher {
+    background-color: var(--color-contrast-higher);
+    color: var(--color-bg);
+}
+
+.badge--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.badge--primary-light {
+    background-color: hsla(
+        var(--color-primary-h),
+        var(--color-primary-s),
+        var(--color-primary-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+}
+
+.badge--accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.badge--accent-light {
+    background-color: hsla(
+        var(--color-accent-h),
+        var(--color-accent-s),
+        var(--color-accent-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+}
+
+.badge--error {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+
+.badge--error-light {
+    background-color: hsla(
+        var(--color-error-h),
+        var(--color-error-s),
+        var(--color-error-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+}
+
+.badge--success {
+    background-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.badge--success-light {
+    background-color: hsla(
+        var(--color-success-h),
+        var(--color-success-s),
+        var(--color-success-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+}
+
+.badge--warning {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+}
+
+.badge--warning-light {
+    background-color: hsla(
+        var(--color-warning-h),
+        var(--color-warning-s),
+        var(--color-warning-l),
+        0.2
+    );
+    color: var(--color-contrast-higher);
+}

@@ -1,0 +1,6 @@
+:root {
+    --switch-width: 40px;
+    --switch-height: 20px;
+    --switch-padding: 3px;
+    --switch-animation-duration: 0.2s;
+}
