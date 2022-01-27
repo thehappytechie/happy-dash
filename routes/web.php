@@ -53,87 +53,25 @@ Route::middleware(['auth', 'force.password.change', 'prevent.back.history', 'dis
 |--------------------------------------------------------------------------
 */
     Route::resources([
-        'coastal-watercraft' => CoastalCraftController::class,
-        'change-name' => ChangeNameShipController::class,
-        'ownership-corporate' => OwnershipCorporateController::class,
-        'international-code' => InternationalCodeLetterController::class,
         'users' => UserController::class,
         'roles' => RoleController::class,
-        'inland-watercraft-license' =>  InlandWatercraftLicenseController::class,
-        'certificate-deletion' => CertificateDeletionController::class,
-        'registry' =>  CertificateRegistryController::class,
-        'registry-fishing-vessel' => RegistryFishingVesselController::class,
-        'registry-provisional' => RegistryProvisionalController::class,
-        'register-ship' => RegisterShipController::class,
-        'survey' => CertificateSurveyController::class,
-        'transcript-register' => TranscriptRegisterController::class,
-        'mortgage' => MortgageController::class,
-        'bill-sale' => BillSaleController::class,
-        'inland-watercraft' => InlandWatercraftController::class,
-        'ship-marking-carving' => ShipMarkingCarvingController::class,
-        'ship-fishing-vessel' => ShipFishingVesselController::class,
-        'ship-inland-water' => ShipInlandWaterController::class,
-        'inland-coastal-watercraft' => LicenseCoastalCraftController::class,
-        'inland-watercraft-license' => LicenseInlandCraftController::class,
-        'inland-watervessel-license' => LicenseInlandVesselController::class,
-
     ]);
     Route::resource('profile', UserProfileController::class)->only(['edit', 'update']);
-
 
     /*
 |--------------------------------------------------------------------------
 | Datatable Controllers
 |--------------------------------------------------------------------------
 */
-Route::controller(DatatableController::class)->group(function() {
-    Route::get('certificate-deletion','certificateDeletion')
-    ->name('certificateDeletion');
-});
+    Route::controller(DatatableController::class)->group(function () {
+        Route::get('certificate-deletion', 'certificateDeletion')
+            ->name('certificateDeletion');
+    });
 
     Route::get('users', [UserDatatableController::class, 'userDatatable'])
         ->name('userDatatable');
     Route::get('roles', [RoleDatatableController::class, 'roleDatatable'])
         ->name('roleDatatable');
-
-    Route::get('registry', [DatatableController::class, 'certificateRegistry'])
-        ->name('certificateRegistry');
-    Route::get('registry-fishing-vessel', [DatatableController::class, 'registryFishingVessel'])
-        ->name('certificateRegistryFishingVessel');
-    Route::get('registry-provisional', [DatatableController::class, 'certificateRegistryProvisional'])
-        ->name('certificateRegistryProvisional');
-    Route::get('survey', [DatatableController::class, 'certificateSurvey'])
-        ->name('certificateSurvey');
-    Route::get('survey', [DatatableController::class, 'certificateSurvey'])
-        ->name('certificateSurvey');
-    Route::get('international-code', [DatatableController::class, 'internationalCode'])
-        ->name('internationalCode');
-    Route::get('change-name', [DatatableController::class, 'changeNameShip'])
-        ->name('changeNameShip');
-    Route::get('register-ship', [DatatableController::class, 'registerShip'])
-        ->name('registerShip');
-    Route::get('ownership-corporate', [DatatableController::class, 'ownershipCorporate'])
-        ->name('ownershipCorporate');
-    Route::get('transcript-register', [DatatableController::class, 'transcriptRegister'])
-        ->name('transcriptRegister');
-    Route::get('mortgage', [DatatableController::class, 'mortgage'])
-        ->name('mortgage');
-    Route::get('bill-sale', [DatatableController::class, 'billSale'])
-        ->name('billSale');
-    Route::get('coastal-watercraft', [DatatableController::class, 'coastalWatercraft'])
-        ->name('coastalWatercraft');
-    Route::get('inland-watercraft', [DatatableController::class, 'inlandWatercraft'])
-        ->name('inlandWatercraft');
-    Route::get('ship-marking-carving', [DatatableController::class, 'shipMarkingCarving'])
-        ->name('shipMarkingCarving');
-    Route::get('ship-inland-water', [DatatableController::class, 'shipInlandWater'])
-        ->name('shipInlandWater');
-    Route::get('ship-fishing-vessel', [DatatableController::class, 'shipFishingVessel'])
-        ->name('shipFishingVessel');
-    Route::get('inland-watercraft-license', [DatatableController::class, 'inlandWatercraftLicense'])
-        ->name('inlandWatercraftLicense');
-    Route::get('inland-coastal-watercraft', [DatatableController::class, 'licenseCoastalCraft'])
-        ->name('licenseCoastalCraft');
     Route::get('activity', [ActivityController::class, 'log'])->name('userActivity');
 
     /*

@@ -5,14 +5,13 @@
     <form action="{{ route('register') }}" method="POST" class="bg radius-md shadow-sm padding-lg">
         @csrf
         <div class="text-center margin-bottom-md">
-            <h1 class="text-xl font-semibold">Create account</h1>
+            <h1 class="text-xxl font-semibold">Create account</h1>
         </div>
         <div class="margin-bottom-sm">
             <label class="form-label margin-bottom-xs" for="inputName">Full name</label>
             <input class="form-control width-100%  @error('name') is-error @enderror" type="text" name="name"
                 value="{{ old('name') }}" id="inputName" required>
         </div>
-        <small class="text-xs">Please provide your full name exactly as it appears in your ID</small>
         @error('name')
         <x-validation-error>{{ $message }}</x-validation-error>
         @enderror
