@@ -26,9 +26,15 @@ trait AuthenticationLoggable
         return optional($this->authentications()->first())->login_at;
     }
 
+
     public function lastSuccessfulLoginAt()
     {
         return optional($this->authentications()->whereLoginSuccessful(true)->first())->login_at;
+    }
+
+    public function loginSuccessful()
+    {
+        return optional($this->authentications()->first())->login_successful;
     }
 
     public function lastLoginIp()

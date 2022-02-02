@@ -9,7 +9,6 @@
 
 <body class="antialiased bg-gray-100 mt-7 md:mt-12 dark:bg-gray-900">
     <div class="mx-auto max-w-7xl lg:px-8 sm:px-6">
-        <a href="{{ route('dashboard') }}" style="text-decoration:underline;color:#0983ff">&larr; Dashboard</a>
         <div class="flex flex-wrap justify-center space-y-3">
             <h4 class="w-full text-2xl font-bold text-center text-gray-900 dark:text-white">{{ __('health::notifications.laravel_health') }}</h4>
             <div class="flex justify-center w-full">

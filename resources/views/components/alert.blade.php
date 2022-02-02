@@ -71,6 +71,7 @@
         dismissible:true,
         duration:0,
         ripple:true,
+        position:{ x:'right', y:'top'},
     })
     notyf.success('Recovery codes have been regenerated.')
     </script>
@@ -82,6 +83,7 @@
         dismissible:true,
         duration:0,
         ripple:true,
+        position:{ x:'right', y:'top'},
     })
     notyf.error('{{ session('message') }}')
     </script>

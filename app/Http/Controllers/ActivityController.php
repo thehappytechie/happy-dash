@@ -21,9 +21,8 @@ class ActivityController extends Controller
                 ->editColumn('causer_id', function (Activity $activity) {
                     return $activity->subject->name;
                 })
-
                 ->editColumn('created_at', function (Activity $activity) {
-                    return Carbon::parse($activity->created_at)->format('D j F, Y h:iA');
+                    return Carbon::parse($activity->created_at)->format('j M, Y h:iA');
                 })
                 ->rawColumns(['description'])
                 ->make(true);

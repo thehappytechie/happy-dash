@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ForcePasswordChangeController;
+use App\Http\Controllers\LoginAttemptController;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 /*
@@ -47,6 +48,7 @@ Route::middleware(['auth', 'force.password.change', 'prevent.back.history', 'dis
     });
 
     Route::get('activity', [ActivityController::class, 'log'])->name('userActivity');
+    Route::get('login-attempt', [LoginAttemptController::class, 'loginAttempt'])->name('loginAttempt');
 
     /*
 |--------------------------------------------------------------------------
