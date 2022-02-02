@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '52a4c8cf54d5cdee9f2ad355b2a384f2a041bbc2',
+        'reference' => 'ab841040604071d1341e29d219d9f7a52242490b',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -472,7 +472,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '52a4c8cf54d5cdee9f2ad355b2a384f2a041bbc2',
+            'reference' => 'ab841040604071d1341e29d219d9f7a52242490b',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -1073,6 +1073,15 @@
             'reference' => 'fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df',
             'dev_requirement' => false,
         ),
+        'rappasoft/laravel-authentication-log' => array(
+            'pretty_version' => 'v1.3.0',
+            'version' => '1.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rappasoft/laravel-authentication-log',
+            'aliases' => array(),
+            'reference' => '616bf9f411a9bd0752ac3646931d463b3cb4620f',
+            'dev_requirement' => false,
+        ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1548,6 +1557,15 @@
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
             'aliases' => array(),
             'reference' => 'da444caae6aca7a19c0c140f68c6182e337d5b1c',
+            'dev_requirement' => false,
+        ),
+        'torann/geoip' => array(
+            'pretty_version' => '3.0.3',
+            'version' => '3.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../torann/geoip',
+            'aliases' => array(),
+            'reference' => 'ec99531b32ddbc42233cc8f6e651f6b39c3cf8a3',
             'dev_requirement' => false,
         ),
         'ua-parser/uap-php' => array(

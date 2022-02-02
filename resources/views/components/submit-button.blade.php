@@ -1,3 +1,3 @@
-<div class="col-12 margin-right-lg text-right margin-top-xl padding-top-sm border-top">
-    <button type="submit" class="btn btn--primary btn--md">{{ $slot }}</button>
+<div class="border-top border-contrast-lower padding-md text-right">
+    <button class="btn btn--primary btn--md">{{ $slot }}</button>
 </div>
